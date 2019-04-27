@@ -21,7 +21,7 @@ if (!spaceId || !accessToken) {
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Contentful starter',
+    title: 'Sigma Pi | University of Kansas',
   },
   pathPrefix: '/gatsby-contentful-starter',
   plugins: [
@@ -29,6 +29,22 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sharp',
+    'gatsby-plugin-styled-components',
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+          component: require.resolve(`./src/components/Layout`)
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-root-import',
+      options: {
+        src: path.join(__dirname, 'src'),
+        pages: path.join(__dirname, 'src/pages'),
+        components: path.join(__dirname, 'src/components'),
+        styledComponents path.join(__dirname, 'src/styledComponents')
+      },
+    },
     {
       resolve: 'gatsby-source-contentful',
       options: contentfulConfig,
