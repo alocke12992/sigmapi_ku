@@ -1,4 +1,5 @@
 let contentfulConfig
+const path = require('path')
 
 try {
   // Load the Contentful config from the .contentful.json
@@ -33,7 +34,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-layout`,
       options: {
-          component: require.resolve(`./src/components/Layout`)
+          component: require.resolve(`./src/layouts`)
       }
     },
     {
@@ -42,7 +43,8 @@ module.exports = {
         src: path.join(__dirname, 'src'),
         pages: path.join(__dirname, 'src/pages'),
         components: path.join(__dirname, 'src/components'),
-        styledComponents path.join(__dirname, 'src/styledComponents')
+        styledComponents: path.join(__dirname, 'src/styledComponents'),
+        static: path.join(__dirname, 'static'),
       },
     },
     {
