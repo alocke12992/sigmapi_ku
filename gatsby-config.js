@@ -44,12 +44,20 @@ module.exports = {
         pages: path.join(__dirname, 'src/pages'),
         components: path.join(__dirname, 'src/components'),
         styledComponents: path.join(__dirname, 'src/styledComponents'),
+        styles: path.join(__dirname, 'src/styles'),
         static: path.join(__dirname, 'static'),
       },
     },
+    // {
+    //   resolve: 'gatsby-source-contentful',
+    //   options: contentfulConfig,
+    // },
     {
-      resolve: 'gatsby-source-contentful',
-      options: contentfulConfig,
-    }
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: path.join(__dirname, 'static', 'images'),
+      },
+    },
   ],
 }
