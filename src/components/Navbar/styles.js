@@ -6,29 +6,30 @@ const Nav = styled.nav`
   display: flex;
   flex-direction: column;
   padding: 20px 0;
-  // position: fixed;
-  // top: 0;
-  // z-index: 1;
   background: ${colors.white};
   ${media.tablet`
     padding: 30px 0 20px;
   `}
 `;
 
-const Spacer = styled.div`
-  height: 130px;
-
+const MobileNav = styled.div`
+  width: 100%;
   ${media.tablet`
-    height: 160px;
+    display: none;
   `}
 `;
 
+const Spacer = styled.div`
+  height: 50px;
+`;
+
 const Logo = styled.div`
-  margin: 0 auto;
-  width: 90%;
-  max-width: 200px;
+  display: none;
 
   ${media.tablet`
+    display: block;
+    margin: 0 auto;
+    width: 90%;
     max-width: 350px;
   `}
 
@@ -38,20 +39,19 @@ const Logo = styled.div`
 `;
 
 const NavMenu = styled.div`
-  padding-top: 1rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  max-width: 200px;
-  width: 90%;
-  margin: 0 auto;
-
+  display: none;
   ${media.tablet`
-    max-width: 350px
+    max-width: 400px
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 90%;
+    margin: 0 auto;
   `}
 
   ${media.desktop`
-    max-width: 400px;
+    max-width: 500px;
   `}
 `;
 
@@ -60,4 +60,5 @@ export {
   Logo,
   NavMenu,
   Spacer,
+  MobileNav,
 };

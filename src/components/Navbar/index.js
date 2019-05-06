@@ -8,6 +8,7 @@ import {
   NavMenu,
   Spacer,
 } from './styles';
+import MobileNav from './MobileNav';
 import logo from 'static/images/Logo.png';
 
 const PureNav = ({img}) => (
@@ -31,8 +32,8 @@ const PureNav = ({img}) => (
           ))
         }
       </NavMenu>
+      <MobileNav routes={routes} logo={img}/>
     </Nav>
-    {/* <Spacer /> */}
   </>
 );
 
