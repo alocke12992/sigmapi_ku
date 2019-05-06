@@ -13,10 +13,6 @@ const media = Object.keys(sizes).reduce((acc, label) => {
   return acc
 }, {})
 
-const colors = {
-  
-}
-
 const theme = {
   colors: {
     darkGrey: '#333333',

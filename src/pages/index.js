@@ -7,6 +7,8 @@ import Img from 'gatsby-image';
 import { Section, Container } from 'styledComponents';
 import InterestForm from 'components/InterestForm';
 import LearnMore from 'components/LearnMore';
+import JoinNow from 'components/JoinNow';
+import { LinkButton } from 'styledComponents/Button';
 
 class RootIndex extends React.Component {
   render() {
@@ -43,7 +45,7 @@ class RootIndex extends React.Component {
           <LearnMore icons={icons} />
         </Section>
         <Section dark>
-          <InterestForm />
+          <JoinNow />
         </Section>
       </>
     )

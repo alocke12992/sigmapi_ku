@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { theme } from 'styledComponents/theme';
+import theme from 'styledComponents/theme';
 import Link from 'components/utils/Link';
 
 const defaultButtonStyle = inverted => `
