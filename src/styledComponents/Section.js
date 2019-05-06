@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import theme, { media } from 'styledComponents/theme';
+import { media, colors } from 'styledComponents/theme';
 
 const Section = styled.div`
   margin: 0 auto;
-  background: ${props => (props.dark ? theme.colors.lightGrey : theme.colors.white)};
+  background: ${props => (props.dark ? colors.lightGrey : colors.white)};
   max-width: ${props => (props.inner ? '768px' : undefined)};
   padding-top: ${props => (props.noPadTop || props.noPad ? '0' : '40px')};
   padding-bottom: ${props => (props.noPadBottom || props.noPad ? '0' : '40px')};
@@ -25,10 +25,10 @@ const SplitBackgroundSection = styled(Section)`
   }
   background: linear-gradient(
     to bottom,
-    ${props => theme.colors[props.top]} 0%,
-    ${props => theme.colors[props.top]} ${props => props.breakPoint ? props.breakPoint : '60%'},
-    ${props => theme.colors[props.bottom]} ${props => props.breakPoint ? props.breakPoint : '60%'},
-    ${props => theme.colors[props.bottom]} 100%
+    ${props => colors[props.top]} 0%,
+    ${props => colors[props.top]} ${props => props.breakPoint ? props.breakPoint : '60%'},
+    ${props => colors[props.bottom]} ${props => props.breakPoint ? props.breakPoint : '60%'},
+    ${props => colors[props.bottom]} 100%
   );
 `;
 

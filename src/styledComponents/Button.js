@@ -1,13 +1,13 @@
 import styled from 'styled-components';
-import theme from 'styledComponents/theme';
+import { colors, media } from 'styledComponents';
 import Link from 'components/utils/Link';
 
 const defaultButtonStyle = inverted => `
   border: none;
   display: inline-block;
   font-size: .875rem;
-  color: ${inverted ? theme.colors.purple : theme.colors.white};
-  background-color: ${inverted ? theme.colors.purple : theme.colors.purple};
+  color: ${inverted ? colors.purple : colors.white};
+  background-color: ${inverted ? colors.purple : colors.purple};
   border-radius: 1rem;
   letter-spacing: .5px;
   font-weight: 100;
@@ -24,8 +24,8 @@ const defaultButtonStyle = inverted => `
 
   }
   :hover {
-    background-color: ${theme.colors.midGrey};
-    color: ${theme.colors.white};
+    background-color: ${colors.midGrey};
+    color: ${colors.white};
     transition: background-color .5s ease 0s, color .5s ease 0s;
 
   }
@@ -45,15 +45,15 @@ const LinkButton = styled(Link)`
 
 const OutlinedButton = styled(Button)`
   background-color: transparent;
-  color: ${theme.colors.darkGrey};
+  color: ${colors.darkGrey};
   min-width: 150px;
-  box-shadow: 0px 0px 0px 1px ${theme.colors.lineColor};
+  box-shadow: 0px 0px 0px 1px ${colors.lineColor};
   transition: box-shadow 0.3s ease 0s, border-color .3s ease 0s;
   :hover {
     background: transparent;
-    color: ${theme.colors.darkGrey};
-    box-shadow: 0px 0px 0px 3px ${theme.colors.darkGrey};
-    border-color: ${theme.colors.darkGrey};
+    color: ${colors.darkGrey};
+    box-shadow: 0px 0px 0px 3px ${colors.darkGrey};
+    border-color: ${colors.darkGrey};
     transition: box-shadow 0.3s ease 0s, border-color .3s ease 0s;
   }
 `;

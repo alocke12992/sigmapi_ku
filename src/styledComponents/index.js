@@ -1,9 +1,10 @@
 import Section from './Section';
 import Container from './Container';
-import theme from './theme';
+import { media, colors } from 'styledComponents/theme';
 
 export {
   Section,
   Container,
-  theme,
+  media,
+  colors,
 };
