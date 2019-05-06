@@ -1,27 +1,24 @@
 import React from 'react';
 import Construction from 'components/Construction';
+import About from 'components/pages/About';
 import { graphql } from 'gatsby';
 
-const AboutPage = () => (
-  <Construction pageTitle="About Sigma Pi" />
-);
+const AboutPage = ({ data }) => <About {...data.aboutPage }/>;
 
 export default AboutPage;
 
 export const query = graphql`
   query {
-      contentfulPage(slug: { eq: "about"}){
+      aboutPage: contentfulPage(slug: { eq: "about"}){
       title
       hero {
         fluid {
-          tracedSVG
+          ...GatsbyContentfulFluid_tracedSVG
         }
       }
       content {
-        paragraph: content {
-          content {
-            value
-          }
+      childContentfulRichText {
+          html
         }
       }
     }

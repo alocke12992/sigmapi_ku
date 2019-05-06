@@ -4,16 +4,20 @@ const routes = [
     "name": "Home",
   },
   {
-    "route": "/contact",
-    "name": "Contact",
-  },
-  {
     "route": "/about",
     "name": "About",
   },
   {
+    "route": "/join",
+    "name": "Recruitment",
+  },
+  {
     "route": "/parents",
     "name": "Parents",
+  },
+  {
+    "route": "/contact",
+    "name": "Contact",
   },
 ];
 
