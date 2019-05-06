@@ -6,30 +6,34 @@ import {
   Nav,
   Logo,
   NavMenu,
+  Spacer,
 } from './styles';
 import logo from 'static/images/Logo.png';
 
 const PureNav = ({img}) => (
-  <Nav>
-    <Logo>
-      <Link to="/">
-      <Img fluid={img} />
-      </Link>
-    </Logo>
-    <NavMenu>
-      {
-        routes.map(({route, name}, i) => (
-          <Link
-            key={i}
-            to={route}
-            className="nav-link"
-          >
-            {name}
-          </Link>
-        ))
-      }
-    </NavMenu>
-  </Nav>
+  <>
+    <Nav>
+      <Logo>
+        <Link to="/">
+        <Img fluid={img} />
+        </Link>
+      </Logo>
+      <NavMenu>
+        {
+          routes.map(({route, name}, i) => (
+            <Link
+              key={i}
+              to={route}
+              className="nav-link"
+            >
+              {name}
+            </Link>
+          ))
+        }
+      </NavMenu>
+    </Nav>
+    {/* <Spacer /> */}
+  </>
 );
 
 const Navbar = (props) => {
