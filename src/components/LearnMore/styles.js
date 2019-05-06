@@ -18,6 +18,7 @@ const IconWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 350px;
 
   ${media.tablet`
     height: 100%;
@@ -29,6 +30,10 @@ const IconWrapper = styled.div`
 `;
 
 const Image = styled.div`
+
+  width: 100%;
+  height: 100%;
+  
   ${media.tablet`
     height: 125px;
     width: 125px;

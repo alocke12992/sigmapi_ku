@@ -53,7 +53,7 @@ render(){
 
   return(
     <>
-    <MenuWrapper onClick={()=>this.handleMenuClick()}>
+    <MenuWrapper>
       <Container>
         <MenuButton open={menuOpen} onClick={()=>this.handleMenuClick()} color='black'/>
         <div style={styles.logo} onClick={()=>this.handleLinkClick('/')}>
