@@ -48,15 +48,25 @@ module.exports = {
         static: path.join(__dirname, 'static'),
       },
     },
-    // {
-    //   resolve: 'gatsby-source-contentful',
-    //   options: contentfulConfig,
-    // },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: spaceId,
+        accessToken: accessToken,
+      },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
         path: path.join(__dirname, 'static', 'images'),
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'icons',
+        path: path.join(__dirname, 'static', 'icons'),
       },
     },
   ],
