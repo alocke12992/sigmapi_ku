@@ -4,12 +4,14 @@ import { Container, IconWrapper, Image } from './styles';
 import { Link } from 'gatsby';
 
 const Icon = ({icon, title, link}) => (
+  <Link to={link}>
   <IconWrapper>
     <Image>
       <Img  fluid={icon} />
     </Image>
     <p>{title}</p>
   </IconWrapper>
+  </Link>
 )
 
 const LearnMore = ({ icons }) => (
