@@ -40,7 +40,9 @@ class RootIndex extends React.Component {
     return (
       <>
         <Helmet title={siteTitle} />
-        <Img fluid={hero} />
+        <Container>
+          <Img fluid={hero} />
+        </Container>
         <Section>
           <LearnMore icons={icons} />
         </Section>

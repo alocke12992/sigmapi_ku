@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @font-face {
   font-family: "Avenir";
   font-weight: 400;
@@ -6,8 +7,9 @@
   font-display: swap;
 }
 
+
 body {
-  font-family: "Avenir", Tahoma, Arial, Helvetica, sans-serif;
+  font-family: "Open Sans", "Avenir", Tahoma, Arial, Helvetica, sans-serif;
   font-size: 1em;
   line-height: 1.65;
   color: #373F49;

@@ -1,7 +1,8 @@
+import React from 'react';
 import { BLOCKS, MARKS } from "@contentful/rich-text-types"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
-const Bold = ({ children }) => <span className="bold">{children}</span>
+const Bold = ({ children }) => <strong>{children}</strong>
 const Text = ({ children }) => <p className="align-center">{children}</p>
 
 const options = {
@@ -13,6 +14,8 @@ const options = {
   },
 }
 
-const richText = (node) => {
-  return documentToReactComponents(node.bodyRichText.json, options)
-}
+const richText = (json) => {
+  return documentToReactComponents(json, options)
+};
+
+export default richText
