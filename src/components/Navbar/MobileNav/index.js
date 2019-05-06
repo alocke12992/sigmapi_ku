@@ -6,30 +6,8 @@ import MenuItem from './MenuItem';
 import Menu from './Menu';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
-import { media, colors } from 'styledComponents/theme'
-
-const Spacer = styled.div`
-  height: 15px;
-`;
-
-const MenuWrapper = styled.div`
-  ${media.tablet`
-    display: none;
-  `}
-`;
-
-const Container = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  zIndex: 99;
-  opacity: 0.9;
-  display: flex;
-  alignItems:center;
-  background: ${colors.white};
-  width: 100%;
-  color: black;
-`
+import { Spacer, MenuWrapper, Container } from './styles';
+import PreventScroll from 'styledComponents/PreventScroll';
 
 class MobileNav extends React.Component {
   state={ menuOpen:false }
@@ -46,19 +24,6 @@ handleLinkClick(route) {
 render(){
   const styles =
     {
-      container:{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        zIndex: '99',
-        opacity: 0.9,
-        display:'flex',
-        alignItems:'center',
-        background: 'white',
-        width: '100%',
-        color: 'black',
-        fontFamily:'Lobster',
-      },
       logo: {
         margin: '0 auto',
         width: '90%',
@@ -77,6 +42,7 @@ render(){
       },
     }
   const { routes, logo } = this.props;
+  const { menuOpen } = this.state;
   const menuItems = routes.map(({route, name},index)=>{
     return (
       <MenuItem
@@ -86,18 +52,21 @@ render(){
   });
 
   return(
-    <MenuWrapper>
+    <>
+    <MenuWrapper onClick={()=>this.handleMenuClick()}>
       <Container>
-        <MenuButton open={this.state.menuOpen} onClick={()=>this.handleMenuClick()} color='black'/>
-        <div style={styles.logo}>
+        <MenuButton open={menuOpen} onClick={()=>this.handleMenuClick()} color='black'/>
+        <div style={styles.logo} onClick={()=>this.handleLinkClick('/')}>
           <Img fluid={logo} />
         </div>
       </Container>
-      <Menu open={this.state.menuOpen}>
+      <Menu open={menuOpen}>
         {menuItems}
       </Menu>
       <Spacer />
     </MenuWrapper>
+    <PreventScroll stopScroll={menuOpen} />
+    </>
   )
 }
 }
