@@ -7,7 +7,7 @@ const Icon = ({icon, title, link}) => (
   <Link to={link}>
   <IconWrapper>
     <Image>
-      <Img  fluid={icon} />
+      <Img  fluid={icon}  />
     </Image>
     <p>{title}</p>
   </IconWrapper>
