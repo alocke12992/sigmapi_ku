@@ -1,6 +1,8 @@
 import React from 'react';
+import { Input, Form } from './styles';
+import { Container, Section, Button } from 'styledComponents';
 
-class Contactform extends React.Component {
+class ContactForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,38 +15,37 @@ class Contactform extends React.Component {
   
   render() {
     return (
-      // <div>
-      // <form>
-      // <label>
-      // <input type="text" name="name" value="Your Name"/>
-      // <input type="text" name="email" value="Your Email"/>
-      // <input type="text" name="subject" value="Subject"/>
-      // <input type="text" name="message" value="Message"/>
-      // </label>
-      // <input type="submit" value="Submit" />
-      // </form>
-      // </div>
-      <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="contact" />
-  <p>
-    <label>Your Name: <input type="text" name="name" /></label>   
-  </p>
-  <p>
-    <label>Your Email: <input type="email" name="email" /></label>
-  </p>
-  <p>
-  
-    <label>Subject: <input type="text" name="subject" /></label>
-  </p>
-  <p>
-    <label>Message: <textarea name="message"></textarea></label>
-  </p>
-  <p>
-    <button type="submit">Send</button>
-  </p>
-</form>
+      <Section dark> 
+      <Container>
+      <Form className="form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact" />
+        <p>
+      
+            <Input placeholder="Name" type="text" name="name" />
+
+        </p>
+        <p>
+          
+            <Input type="email" name="email" />
+        </p>
+        <p>
+          
+            <Input type="text" name="subject" />
+        </p>
+        <p>
+        
+          <textarea name="message">
+          </textarea>
+        
+        </p>
+        <p>
+          <Button type="submit">Send</Button>
+        </p>
+      </Form>
+      </Container>
+      </Section>
       )
     }
   }
-
-  export default Contactform;
+  
+  export default ContactForm;
