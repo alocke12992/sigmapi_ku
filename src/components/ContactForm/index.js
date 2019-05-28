@@ -1,35 +1,53 @@
-import React from 'react';
-import { Input, Form } from './styles';
-import { Container, Section, Button } from 'styledComponents';
+import React, { useState } from 'react';
+import { Link } from 'gatsby';
+import { Form, Button, Input, useStyles } from './styles';
+import { Container, Section, colors } from 'styledComponents';
 
-class ContactForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: '',
-      email: '',
-      message: ''
-    }
-
-  }
-
-  render() {
-    return (
-      <Section dark>
+function ContactForm() {
+  const classes = useStyles();
+  return (
+    <Section dark>
       <Container>
-      <Form className="form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="contact" />
-        <Input placeholder="Name" type="text" name="name" />
-        <Input type="email" name="email" />
-        <Input type="text" name="subject" />
-        <textarea name="message">
-        </textarea>
-        <Button type="submit">Send</Button>
-      </Form>
+        <Form className="form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+          <h1>Contact us</h1>
+          <p>If you're interested in learning more about joining Sigma Pi, check out our <Link to="/join">Recruitment page</Link> and sign up via one of the interest forms there.</p>
+          <input type="hidden" name="form-name" value="contact" />
+          <Input
+            className={classes.margin}
+            type="text"
+            name="name"
+            label="Name"
+            variant="outlined"
+          />
+          <Input
+            type="email"
+            name="email"
+            className={classes.margin}
+            label="Email"
+            variant="outlined"
+          />
+          <Input
+            type="text"
+            name="subject"
+            className={classes.margin}
+            label="Subject"
+            variant="outlined"
+          />
+          <Input
+            type="text"
+            name="message"
+            multiline
+            rowsMax="4"
+            rows="3"
+            className={classes.margin}
+            label="Message"
+            variant="outlined"
+          />
+          <Button type="submit">Send</Button>
+        </Form>
       </Container>
-      </Section>
-      )
-    }
-  }
+    </Section>
+  )
+}
 
   export default ContactForm;
