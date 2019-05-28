@@ -24,10 +24,10 @@
     "gatsby-transformer-remark": "^2.1.6",
     "gatsby-transformer-sharp": "^2.0.6",
     "lodash": "^4.17.11",
-    "react": "^16.5.2",
+    "react": "^16.8.6",
     "react-dom": "^16.5.2",
     "react-helmet": "^5.2.0",
-    "sharp": "^0.21.0",
+    "sharp": "^0.22.1",
     "styled-components": "^4.2.0"
   },
   "devDependencies": {
@@ -41,7 +41,7 @@
     "inquirer": "^6.2.0",
     "prettier": "^1.14.3",
     "rimraf": "^2.6.2",
-    "yargs-parser": "^11.0.0"
+    "yargs-parser": "^13.1.0"
   },
   "homepage": "https://github.com/contentful-userland/gatsby-contentful-starter#readme",
   "keywords": [
