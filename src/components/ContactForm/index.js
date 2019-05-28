@@ -18,6 +18,7 @@ function ContactForm() {
             name="name"
             label="Name"
             variant="outlined"
+            required
           />
           <Input
             type="email"
@@ -25,6 +26,7 @@ function ContactForm() {
             className={classes.margin}
             label="Email"
             variant="outlined"
+            required
           />
           <Input
             type="text"
@@ -32,6 +34,7 @@ function ContactForm() {
             className={classes.margin}
             label="Subject"
             variant="outlined"
+            required
           />
           <Input
             type="text"
@@ -42,6 +45,7 @@ function ContactForm() {
             className={classes.margin}
             label="Message"
             variant="outlined"
+            required
           />
           <Button type="submit">Send</Button>
         </Form>
