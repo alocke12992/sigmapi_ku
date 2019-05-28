@@ -13,8 +13,8 @@ const defaultButtonStyle = inverted => `
   font-weight: 100;
   cursor: pointer;
   transition: background-color .5s ease, color .5s ease;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   padding-right: 28px;
   padding-left: 28px;
 

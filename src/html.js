@@ -15,6 +15,7 @@ export default class HTML extends React.Component {
           />
           {this.props.headComponents}
           <Favicons />
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" />
         </head>
         <body {...this.props.bodyAttributes}>
           {this.props.preBodyComponents}
