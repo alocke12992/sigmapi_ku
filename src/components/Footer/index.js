@@ -1,5 +1,5 @@
-import React, { Fragment } from 'react';
-import { StaticQuery, graphql, Link } from 'gatsby'
+import React from 'react';
+import { Link } from 'gatsby'
 import {
   FooterContainer,
   RouteSection,

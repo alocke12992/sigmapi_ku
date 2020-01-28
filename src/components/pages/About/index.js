@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container } from './styles';
 import Img from 'gatsby-image';
-import Footer from '../../../components/Footer';
+import Footer from '../../Footer';
 
 const About = ({title, hero, content, president }) => {
   const { html } = content.childContentfulRichText;

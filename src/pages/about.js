@@ -1,7 +1,5 @@
 import React from 'react';
-import Construction from 'components/Construction';
-import About from 'components/pages/About';
-import { graphql } from 'gatsby';
+import About from '../components/pages/About';
 
 const AboutPage = ({ data }) => <About {...data.aboutPage } president={data.president} />;
 

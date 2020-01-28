@@ -1,15 +1,11 @@
 import React from 'react';
 import get from 'lodash/get';
 import Helmet from 'react-helmet';
-import styled from 'styled-components';
-import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import { Section, Container } from 'styledComponents';
-import InterestForm from 'components/InterestForm';
 import LearnMore from 'components/LearnMore';
 import JoinNow from 'components/JoinNow';
 import Footer from 'components/Footer';
-import { LinkButton } from 'styledComponents/Button';
 
 class RootIndex extends React.Component {
   render() {

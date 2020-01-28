@@ -12,3 +12,5 @@ const Layout = ({ children, location }) => (
     </>
   </ThemeProvider>
 );
+
+export default Layout;

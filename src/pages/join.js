@@ -1,5 +1,4 @@
 import React from 'react';
-import Construction from 'components/Construction';
 import Footer from 'components/Footer';
 import { Container, Section } from 'styledComponents';
 import { media } from 'styledComponents/theme';
