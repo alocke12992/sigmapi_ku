@@ -8,6 +8,7 @@ import { Section, Container } from 'styledComponents';
 import InterestForm from 'components/InterestForm';
 import LearnMore from 'components/LearnMore';
 import JoinNow from 'components/JoinNow';
+import Footer from 'components/Footer';
 import { LinkButton } from 'styledComponents/Button';
 
 class RootIndex extends React.Component {
@@ -18,6 +19,7 @@ class RootIndex extends React.Component {
     const greekCross = get(this, 'props.data.greekCross.childImageSharp.fluid')
     const omega = get(this, 'props.data.omega.childImageSharp.fluid')
     const parents = get(this, 'props.data.parents.childImageSharp.fluid')
+    const president = get(this, 'props.data.president')
 
     const icons = [
       {
@@ -49,6 +51,7 @@ class RootIndex extends React.Component {
         <Section dark>
           <JoinNow />
         </Section>
+        <Footer president={president} />
       </>
     )
   }
@@ -92,6 +95,11 @@ export const query = graphql`
           ...GatsbyImageSharpFluid_withWebp
         }
       }
+    }
+    president: contentfulPerson(position: { eq: "President"}){
+      name
+      email
+      phone
     }
   }
 `;

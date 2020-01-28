@@ -3,7 +3,7 @@ import Construction from 'components/Construction';
 import About from 'components/pages/About';
 import { graphql } from 'gatsby';
 
-const AboutPage = ({ data }) => <About {...data.aboutPage }/>;
+const AboutPage = ({ data }) => <About {...data.aboutPage } president={data.president} />;
 
 export default AboutPage;
 
@@ -21,6 +21,11 @@ export const query = graphql`
           html
         }
       }
+    }
+    president: contentfulPerson(position: { eq: "President"}){
+      name
+      email
+      phone
     }
   }
 `;

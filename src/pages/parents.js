@@ -3,7 +3,7 @@ import Construction from 'components/Construction';
 import Parents from 'components/pages/Parents';
 import { graphql } from 'gatsby';
 
-const ParentsPage = ({ data }) => <Parents {...data.parentsPage} />
+const ParentsPage = ({ data }) => <Parents {...data.parentsPage} president={data.president} />
 
 export default ParentsPage;
 
@@ -19,6 +19,11 @@ export const query = graphql`
       content {
         json
       }
+    }
+    president: contentfulPerson(position: { eq: "President"}){
+      name
+      email
+      phone
     }
   }
 `;

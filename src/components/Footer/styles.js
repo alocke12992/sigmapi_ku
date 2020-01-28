@@ -24,6 +24,12 @@ const FooterContainer = styled.footer`
       padding-bottom: 2.5rem;
     `}
   }
+
+  padding: 25px 0;
+
+  ${media.tablet`
+    padding: 3rem 0;
+  `}
 `;
 
 
@@ -31,7 +37,6 @@ const FooterInfo = styled.div`
   width: 80%;
   max-width: 1280px;
   margin: 0 auto;
-  padding-top: 25px;
   display: block;
 
   ${media.tablet`
@@ -40,7 +45,6 @@ const FooterInfo = styled.div`
     justify-content: start;
     align-items: start;
     width: 90%;
-    padding-top: 3rem;
   `}
 
 `;
@@ -52,6 +56,12 @@ const ContactInfo = styled.div`
   ${media.tablet`
     width: 90%;
   `}
+
+  p {
+    color: white;
+    font-size: 10px;
+    text-align: right;
+  }
 
   h4 {
     color: ${colors.white};

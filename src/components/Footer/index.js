@@ -8,7 +8,7 @@ import {
 } from './styles';
 import routes from 'src/routes';
 
-const Footer = () => (
+const Footer = ({ president: { name, phone, email } }) => (
   <FooterContainer>
       <FooterInfo>
           <RouteSection>
@@ -27,14 +27,15 @@ const Footer = () => (
           <RouteSection>
           <Link to='/contact/'><h4>Contact</h4></Link>
             <ul>
-              <li>Clayton Sell</li>
+              <li>{name && name}</li>
               <li>President</li>
-              <li>(316) 347-4466</li>
-              <li>BetaDelta@SigmaPi.org</li>
+              <li>{phone && phone}</li>
+              <li>{email && email}</li>
             </ul>
           </RouteSection>
       </FooterInfo>
       <ContactInfo>
+        <p>Website designed, built and maintained by <a href="https://github.com/alocke12992/" rel="noopener noreferrer">Andrew Locke</a></p>
       </ContactInfo>
   </FooterContainer>
 );
