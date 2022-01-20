@@ -2,6 +2,8 @@ import React from 'react';
 import Footer from 'components/Footer';
 import { Container, Section } from 'styledComponents';
 import { media } from 'styledComponents/theme';
+import Img from 'gatsby-image';
+import { get } from 'lodash';
 import { LinkButton } from 'styledComponents/Button';
 
 const forms = {
@@ -65,11 +67,15 @@ const Column = styled(Container)`
 
 
 const ContactPage = ({ data }) => {
-  const { welcomeMessage, letterFromPresident, financials, rushSchedule, } = data.recruitmentPage;
+  const { welcomeMessage, letterFromPresident, financials, rushSchedule, hero } = data.recruitmentPage;
   const { name, email, phone, position } = data.president;
   const defaultWelcome = "Sigma Pi is interested in recruiting well-rounded, impressive men from all over the country. We invite high school seniors, freshmen college students and others interested in knowing more about Sigma Pi at the University of Kansas to contact our Recruitment Chairman by clicking on one of the buttons below. We will be sure to contact you to answer any questions you may have about our fraternity and keep you informed of upcoming rush events, and we appreciate your interest in Sigma Pi."
+  const letter = get(letterFromPresident, 'content.html', '');
   return (
     <>
+        <Container>
+          <Img fluid={hero.fluid} />
+        </Container>
       <Section>
         <Column>
         <h1>Join Sigma Pi</h1>
@@ -80,11 +86,11 @@ const ContactPage = ({ data }) => {
         </div>
         </Column>
       </Section>
-      { letterFromPresident && (
+      { letter && (
         <Section dark>
           <Container>
             <h3>Prospective New Members,</h3>
-            <p dangerouslySetInnerHTML={{ __html: letterFromPresident.content.html }} />
+            <p dangerouslySetInnerHTML={{ __html: letter }} />
             <p>{name && name}</p>
             <p>{phone && phone}</p>
             <p>{email && email}</p>

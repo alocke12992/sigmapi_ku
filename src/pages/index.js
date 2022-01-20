@@ -10,12 +10,13 @@ import Footer from 'components/Footer';
 class RootIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-    const hero = get(this, 'props.data.hero.childImageSharp.fluid')
+    const hero = get(this, 'props.data.hero.fluid')
     const crest = get(this, 'props.data.crest.childImageSharp.fluid')
     const greekCross = get(this, 'props.data.greekCross.childImageSharp.fluid')
     const omega = get(this, 'props.data.omega.childImageSharp.fluid')
     const parents = get(this, 'props.data.parents.childImageSharp.fluid')
     const president = get(this, 'props.data.president')
+    console.log(hero);
 
     const icons = [
       {
@@ -54,14 +55,11 @@ class RootIndex extends React.Component {
 }
 
 export default RootIndex
-
 export const query = graphql`
-  query {
-    hero: file(relativePath: { eq: "house.png" }) {
-      childImageSharp {
-        fluid(quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+  query{
+    hero: contentfulAsset(title: { eq: "house" }) {
+      fluid(quality: 100) {
+        ...GatsbyContentfulFluid_withWebp
       }
     }
     crest: file(relativePath: { eq: "crest.png" }) {
